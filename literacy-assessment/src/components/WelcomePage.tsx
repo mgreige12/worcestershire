@@ -1,0 +1,67 @@
+import brownGrid from "../../public/brownGrid.png";
+import apple from "../../public/appleAsset.png";
+import greenTape from "../../public/greenTape.png";
+import brownTape from "../../public/brownTape.png";
+import smiski from "../../public/smiskiReading.png"
+
+function WelcomePage() {
+    return (
+        <main
+            className="h-screen flex flex-col items-center justify-center gap-6 text-[#333333]"
+            style={{ backgroundImage: `url(${brownGrid})` }}
+        >
+            <div className="relative bg-stone-50 w-225 h-120 flex flex-col justify-center items-center">
+
+                {/* Green Tape */}
+                <img
+                    src={greenTape}
+                    className="absolute -left-10 -top-18 rotate-[45deg] w-40 z-10"
+                />
+
+                {/* Apple */}
+                <img
+                    src={apple}
+                    className="absolute -left-23 -top-20 -rotate-[30deg] w-58 z-20"
+                />
+
+                {/* Brown Tape */}
+                <img
+                    src={brownTape}
+                    className="absolute -right-10 -bottom-10  rotate-[40deg] w-30 z-10"
+                />
+                {/* Brown Tape */}
+                <img
+                    src={smiski}
+                    className="absolute -right-20 -bottom-13  w-50 z-10"
+                />
+
+                <div className="flex items-center justify-center flex-col gap-4">
+                    <h1 className="text-7xl font-semibold">
+                        Welcome to
+                    </h1>
+
+                    <p className="text-7xl font-semibold">
+                        Worchestershire!
+                    </p>
+
+                    <p className="text-4xl">
+                        "Wuh-Stuh-Shr"
+                    </p>
+                </div>
+
+                <div className="flex items-center justify-center flex-row gap-8 pt-10">
+                    <button className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50">
+                        Assessment
+                    </button>
+
+                    <button className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50">
+                        Practice
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    );
+}
+
+export default WelcomePage;
