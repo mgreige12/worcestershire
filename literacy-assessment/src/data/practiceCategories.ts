@@ -189,19 +189,6 @@ export const practiceCategories: Record<string, PracticeCategory> = {
                     },
                 ],
             },
-            {
-                id: "short-oo",
-                name: "Short oo vowel team",
-                ipa: "ʊ",
-                modules: [
-                    {
-                        id: "oo-short",
-                        grapheme: "oo",
-                        example: "book",
-                        definition: "oo can make a short /ʊ/ sound.",
-                    },
-                ],
-            },
         ],
     },
 };
