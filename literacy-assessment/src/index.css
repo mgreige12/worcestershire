@@ -3,3 +3,8 @@
 *{
     font-family: "Quicksand";
 }
+
+select,
+option {
+    font-family: "Quicksand", sans-serif;
+}

@@ -2,15 +2,27 @@ import brownGrid from "../../public/brownGrid.png";
 import apple from "../../public/appleAsset.png";
 import greenTape from "../../public/greenTape.png";
 import brownTape from "../../public/brownTape.png";
-import smiski from "../../public/smiskiReading.png"
+import smiski from "../../public/smiskiReading.png";
 
 function WelcomePage() {
     return (
         <main
-            className="h-screen flex flex-col items-center justify-center gap-6 text-[#333333]"
+            className="min-h-screen flex flex-col items-center justify-center text-[#333333] px-6"
             style={{ backgroundImage: `url(${brownGrid})` }}
         >
-            <div className="relative bg-stone-50 w-225 h-120 flex flex-col justify-center items-center">
+            <div
+                className="
+                    relative
+                    bg-stone-50
+                    w-[90vw]
+                    max-w-225
+                    h-120
+                    flex
+                    flex-col
+                    justify-center
+                    items-center
+                "
+            >
 
                 {/* Green Tape */}
                 <img
@@ -27,15 +39,16 @@ function WelcomePage() {
                 {/* Brown Tape */}
                 <img
                     src={brownTape}
-                    className="absolute -right-10 -bottom-10  rotate-[40deg] w-30 z-10"
-                />
-                {/* Brown Tape */}
-                <img
-                    src={smiski}
-                    className="absolute -right-20 -bottom-13  w-50 z-10"
+                    className="absolute -right-10 -bottom-10 rotate-[40deg] w-30 z-10"
                 />
 
-                <div className="flex items-center justify-center flex-col gap-4">
+                {/* Smiski */}
+                <img
+                    src={smiski}
+                    className="absolute -right-20 -bottom-13 w-50 z-20"
+                />
+
+                <div className="flex bg-[#fffdf8] items-center justify-center flex-col gap-4 text-center">
                     <h1 className="text-7xl font-semibold">
                         Welcome to
                     </h1>
