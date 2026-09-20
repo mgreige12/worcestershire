@@ -57,7 +57,7 @@ function WelcomePage() {
                     </h1>
 
                     <p className="text-7xl font-semibold">
-                        Worchestershire!
+                        Worcestershire!
                     </p>
 
                     <p className="text-4xl">
