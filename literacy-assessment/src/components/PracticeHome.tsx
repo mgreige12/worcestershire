@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { images } from "../assets/images";
 
 function PracticeHome() {
     const [category, setCategory] = useState("cvc");
@@ -11,10 +10,7 @@ function PracticeHome() {
     };
 
     return (
-        <main
-            className="min-h-screen flex items-center justify-center text-[#333333] px-6"
-            style={{ backgroundImage: `url(${images.brownGrid})` }}
-        >
+        <main className="min-h-screen flex items-center justify-center text-[#333333] px-6">
             {/* White paper */}
             <div
                 className="

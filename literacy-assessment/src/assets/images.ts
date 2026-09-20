@@ -9,9 +9,22 @@ export const images = {
     smiskiPaint: "/smiskiPaint.png",
 } as const;
 
+const heldImages: HTMLImageElement[] = [];
+let preloadPromise: Promise<void> | null = null;
+
 export function preloadImages() {
-    Object.values(images).forEach((src) => {
-        const image = new Image();
-        image.src = src;
-    });
+    if (preloadPromise) {
+        return preloadPromise;
+    }
+
+    preloadPromise = Promise.all(
+        Object.values(images).map((src) => {
+            const image = new Image();
+            image.src = src;
+            heldImages.push(image);
+            return image.decode().catch(() => undefined);
+        })
+    ).then(() => undefined);
+
+    return preloadPromise;
 }

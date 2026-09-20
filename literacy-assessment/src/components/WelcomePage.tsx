@@ -5,10 +5,7 @@ function WelcomePage() {
     const navigate = useNavigate();
 
     return (
-        <main
-            className="min-h-screen flex flex-col items-center justify-center text-[#333333] px-6"
-            style={{ backgroundImage: `url(${images.brownGrid})` }}
-        >
+        <main className="min-h-screen flex flex-col items-center justify-center text-[#333333] px-6">
             <div
                 className="
                     relative
@@ -27,7 +24,7 @@ function WelcomePage() {
                 <img
                     src={images.greenTape}
                     alt=""
-                    fetchPriority="high"
+                    decoding="sync"
                     className="absolute -left-10 -top-18 rotate-[45deg] w-40 z-10"
                 />
 
@@ -35,7 +32,7 @@ function WelcomePage() {
                 <img
                     src={images.apple}
                     alt=""
-                    fetchPriority="high"
+                    decoding="sync"
                     className="absolute -left-23 -top-20 -rotate-[30deg] w-58 z-20"
                 />
 
@@ -43,7 +40,7 @@ function WelcomePage() {
                 <img
                     src={images.brownTape}
                     alt=""
-                    fetchPriority="high"
+                    decoding="sync"
                     className="absolute -right-10 -bottom-10 rotate-[40deg] w-30 z-10"
                 />
 
@@ -51,7 +48,7 @@ function WelcomePage() {
                 <img
                     src={images.smiskiReading}
                     alt=""
-                    fetchPriority="high"
+                    decoding="sync"
                     className="absolute -right-20 -bottom-13 w-50 z-20"
                 />
 

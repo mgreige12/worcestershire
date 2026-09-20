@@ -102,10 +102,7 @@ function ResultsPage() {
     };
 
     return (
-        <main
-            className="relative min-h-screen flex items-center justify-center px-6 py-10 text-[#333333]"
-            style={{ backgroundImage: `url(${images.brownGrid})` }}
-        >
+        <main className="relative min-h-screen flex items-center justify-center px-6 py-10 text-[#333333]">
            
 
             {/* Results Paper */}
@@ -291,6 +288,8 @@ function ResultsPage() {
             {/* Smiski */}
             <img
                 src={images.smiskiGarden}
+                alt=""
+                decoding="sync"
                 className="absolute right-[2vw] bottom-[1vh] w-[clamp(200px,15vw,300px)]"
             />
 

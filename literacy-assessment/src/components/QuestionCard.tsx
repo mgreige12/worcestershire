@@ -4,10 +4,7 @@ import { images } from "../assets/images";
 
 function QuestionCard() {
     return (
-        <main
-            className="relative min-h-screen flex items-center justify-center bg-stone-100 text-[#333333] overflow-hidden"
-            style={{ backgroundImage: `url(${images.brownGrid})` }}
-        >
+        <main className="relative min-h-screen flex items-center justify-center text-[#333333] overflow-hidden">
 
             {/* White Assessment Box */}
             <div className="w-[55%] bg-white rounded-2xl shadow-lg p-10">
@@ -61,6 +58,8 @@ function QuestionCard() {
             {/* Smiski - stays near bottom right of screen */}
             <img
                 src={images.smiskiTeaching}
+                alt=""
+                decoding="sync"
                 className="
                     absolute
                     right-[8vw]

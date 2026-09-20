@@ -4,6 +4,12 @@
     font-family: "Quicksand";
 }
 
+body {
+    min-height: 100vh;
+    background-color: #cbb89a;
+    background-image: url("/brownGrid.png");
+}
+
 select,
 option {
     font-family: "Quicksand", sans-serif;
