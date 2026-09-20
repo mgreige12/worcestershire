@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAssessment } from "../features/assessment/assessmentProvider";
 import { averageScore } from "../features/soundSystems/scoring";
+import Confetti from "react-confetti";
 import {
     SOUND_SYSTEMS,
     type GraphemePhonemeScores,
 } from "../features/soundSystems/soundSystems";
 import brownGrid from "../../public/brownGrid.png";
 import smiski from "../../public/smiskiGarden.png";
+
+
+
 
 function combineScores(
     generalScores: GraphemePhonemeScores,
@@ -37,6 +41,25 @@ function formatPercentage(percent: number | null): string {
 }
 
 function ResultsPage() {
+    const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+    });
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     const [openCategory, setOpenCategory] = useState<number | null>(null);
     const { scoresBySystem, scoresByGrapheme } = useAssessment();
 
@@ -76,7 +99,12 @@ function ResultsPage() {
             className="relative min-h-screen flex items-center justify-center px-6 py-10 text-[#333333]"
             style={{ backgroundImage: `url(${brownGrid})` }}
         >
-           
+           <Confetti
+            width={windowSize.width}
+            height={windowSize.height}
+            numberOfPieces={300}
+            recycle={false}
+        />
 
             {/* Results Paper */}
             <div className="w-[90%] max-w-6xl min-h-[75vh] bg-white rounded-lg shadow-lg px-12 py-10">
