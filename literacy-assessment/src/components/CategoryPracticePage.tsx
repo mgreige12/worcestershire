@@ -1,5 +1,5 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import brownGrid from "../../public/brownGrid.png";
+import { images } from "../assets/images";
 import { practiceCategories } from "../data/practiceCategories";
 
 function ModuleBox({
@@ -59,7 +59,7 @@ function CategoryPracticePage() {
                     ? "items-center"
                     : "items-start py-12"
             }`}
-            style={{ backgroundImage: `url(${brownGrid})` }}
+            style={{ backgroundImage: `url(${images.brownGrid})` }}
         >
             <div
                 className="

@@ -1,21 +1,19 @@
-import brownGrid from "../../public/brownGrid.png";
-import apple from "../../public/appleAsset.png";
-import greenTape from "../../public/greenTape.png";
-import brownTape from "../../public/brownTape.png";
-import smiski from "../../public/smiskiReading.png";
+import { useNavigate } from "react-router-dom";
+import { images } from "../assets/images";
 
 function WelcomePage() {
+    const navigate = useNavigate();
+
     return (
         <main
             className="min-h-screen flex flex-col items-center justify-center text-[#333333] px-6"
-            style={{ backgroundImage: `url(${brownGrid})` }}
+            style={{ backgroundImage: `url(${images.brownGrid})` }}
         >
             <div
                 className="
                     relative
                     bg-stone-50
                     w-[90vw]
-                    butt
                     max-w-225
                     h-120
                     flex
@@ -27,25 +25,33 @@ function WelcomePage() {
 
                 {/* Green Tape */}
                 <img
-                    src={greenTape}
+                    src={images.greenTape}
+                    alt=""
+                    fetchPriority="high"
                     className="absolute -left-10 -top-18 rotate-[45deg] w-40 z-10"
                 />
 
                 {/* Apple */}
                 <img
-                    src={apple}
+                    src={images.apple}
+                    alt=""
+                    fetchPriority="high"
                     className="absolute -left-23 -top-20 -rotate-[30deg] w-58 z-20"
                 />
 
                 {/* Brown Tape */}
                 <img
-                    src={brownTape}
+                    src={images.brownTape}
+                    alt=""
+                    fetchPriority="high"
                     className="absolute -right-10 -bottom-10 rotate-[40deg] w-30 z-10"
                 />
 
                 {/* Smiski */}
                 <img
-                    src={smiski}
+                    src={images.smiskiReading}
+                    alt=""
+                    fetchPriority="high"
                     className="absolute -right-20 -bottom-13 w-50 z-20"
                 />
 
@@ -64,11 +70,19 @@ function WelcomePage() {
                 </div>
 
                 <div className="flex items-center justify-center flex-row gap-8 pt-10">
-                    <button className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50">
+                    <button
+                        type="button"
+                        onClick={() => navigate("/assessment")}
+                        className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50"
+                    >
                         Assessment
                     </button>
 
-                    <button className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50">
+                    <button
+                        type="button"
+                        onClick={() => navigate("/practice")}
+                        className="cursor-pointer border rounded-3xl p-2 w-40 text-2xl hover:opacity-50"
+                    >
                         Practice
                     </button>
                 </div>

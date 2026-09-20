@@ -1,13 +1,12 @@
 import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
 import { assessWord } from "../SpeechTest";
-import brownGrid from "../../public/brownGrid.png";
-import smiski from "../../public/smiskiTeaching.png";
+import { images } from "../assets/images";
 
 function QuestionCard() {
     return (
         <main
             className="relative min-h-screen flex items-center justify-center bg-stone-100 text-[#333333] overflow-hidden"
-            style={{ backgroundImage: `url(${brownGrid})` }}
+            style={{ backgroundImage: `url(${images.brownGrid})` }}
         >
 
             {/* White Assessment Box */}
@@ -61,7 +60,7 @@ function QuestionCard() {
 
             {/* Smiski - stays near bottom right of screen */}
             <img
-                src={smiski}
+                src={images.smiskiTeaching}
                 className="
                     absolute
                     right-[8vw]

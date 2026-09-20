@@ -1,6 +1,5 @@
 import { useState } from "react";
-import brownGrid from "../../public/brownGrid.png";
-import smiski from "../../public/smiskiGarden.png";
+import { images } from "../assets/images";
 
 function ResultsPage() {
     const [openCategory, setOpenCategory] = useState(null);
@@ -105,7 +104,7 @@ function ResultsPage() {
     return (
         <main
             className="relative min-h-screen flex items-center justify-center px-6 py-10 text-[#333333]"
-            style={{ backgroundImage: `url(${brownGrid})` }}
+            style={{ backgroundImage: `url(${images.brownGrid})` }}
         >
            
 
@@ -291,7 +290,7 @@ function ResultsPage() {
 
             {/* Smiski */}
             <img
-                src={smiski}
+                src={images.smiskiGarden}
                 className="absolute right-[2vw] bottom-[1vh] w-[clamp(200px,15vw,300px)]"
             />
 
