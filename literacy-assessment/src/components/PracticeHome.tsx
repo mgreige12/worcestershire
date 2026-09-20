@@ -32,11 +32,11 @@ function PracticeHome() {
             >
                 {/* Heading */}
                 <div>
-                    <h1 className="text-6xl font-bold text-[#7BAA3C]">
+                    <h1 className="text-5xl font-bold text-[#7BAA3C]">
                         Practice
                     </h1>
 
-                    <p className="text-2xl mt-2 font-medium">
+                    <p className="text-xl mt-2 font-medium">
                         Pick a category to practice
                     </p>
                 </div>
@@ -112,8 +112,8 @@ function PracticeHome() {
                             font-semibold
                             cursor-pointer
                             transition
-                            hover:scale-105
-                            hover:opacity-90
+                            
+                            hover:opacity-50
                             active:scale-95
                         "
                     >

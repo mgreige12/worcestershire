@@ -110,14 +110,14 @@ function ResultsPage() {
            
 
             {/* Results Paper */}
-            <div className="w-[90%] max-w-6xl min-h-[75vh] bg-white rounded-lg shadow-lg px-12 py-10">
+            <div className="w-[80%] max-w-5xl min-h-[70vh] bg-white rounded-lg shadow-lg px-12 py-10">
 
                 <div className="mb-10">
                     <p className="text-sm text-[#7aa94c] font-semibold tracking-wide">
                         ASSESSMENT COMPLETE
                     </p>
 
-                    <h1 className="text-5xl font-semibold mt-2">
+                    <h1 className="text-4xl font-semibold mt-2">
                         The Results !
                     </h1>
 
@@ -138,11 +138,11 @@ function ResultsPage() {
                             >
                                 <div className="flex items-center gap-5">
 
-                                    <span className="text-2xl font-semibold text-[#7aa94c]">
+                                    <span className="text-xl font-semibold text-[#7aa94c]">
                                         {index + 1})
                                     </span>
 
-                                    <span className="text-3xl font-semibold group-hover:text-[#7aa94c] transition">
+                                    <span className="text-2xl font-semibold group-hover:text-[#7aa94c] transition">
                                         {result.category}
                                     </span>
 

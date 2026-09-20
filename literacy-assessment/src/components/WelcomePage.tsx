@@ -15,6 +15,7 @@ function WelcomePage() {
                     relative
                     bg-stone-50
                     w-[90vw]
+                    butt
                     max-w-225
                     h-120
                     flex
