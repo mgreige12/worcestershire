@@ -1,93 +1,10 @@
-export type SoundSystemId = "cvc" | "silent-e" | "vowel-teams";
-
-export interface SoundSystem {
-  id: SoundSystemId;
-  label: string;
-  description: string;
-  passages: readonly string[];
-}
-
-export interface GraphemePhonemePair {
-  grapheme: string;
-  phoneme: string;
-}
-
-export interface GraphemePhonemeScore extends GraphemePhonemePair {
-  score: number;
-  count: number;
-}
-
-export type GraphemePhonemeScores = readonly GraphemePhonemeScore[];
-
-export const SOUND_SYSTEM_TARGETS: Record<
-  SoundSystemId,
-  readonly GraphemePhonemePair[]
-> = {
-  "cvc": [
-    { grapheme: "a", phoneme: "æ" },
-    { grapheme: "e", phoneme: "ɛ" },
-    { grapheme: "i", phoneme: "ɪ" },
-    { grapheme: "o", phoneme: "ɑ" },
-    { grapheme: "u", phoneme: "ʌ" },
-  ],
-  "silent-e": [
-    { grapheme: "a", phoneme: "eɪ" },
-    { grapheme: "e", phoneme: "i" },
-    { grapheme: "i", phoneme: "aɪ" },
-    { grapheme: "o", phoneme: "oʊ" },
-    { grapheme: "u", phoneme: "u" },
-    { grapheme: "u", phoneme: "ju" },
-  ],
-  "vowel-teams": [
-    { grapheme: "ai", phoneme: "eɪ" },
-    { grapheme: "ay", phoneme: "eɪ" },
-    { grapheme: "ee", phoneme: "i" },
-    { grapheme: "ie", phoneme: "i" },
-    { grapheme: "ei", phoneme: "i" },
-    { grapheme: "ey", phoneme: "i" },
-    { grapheme: "oa", phoneme: "oʊ" },
-    { grapheme: "ow", phoneme: "oʊ" },
-    { grapheme: "oo", phoneme: "u" },
-    { grapheme: "ue", phoneme: "u" },
-    { grapheme: "ui", phoneme: "u" },
-    { grapheme: "ew", phoneme: "u" },
-    { grapheme: "oo", phoneme: "ʊ" },
-    { grapheme: "ea", phoneme: "ɛ" },
-  ],
-};
-
-export const SOUND_SYSTEMS: readonly SoundSystem[] = [
-  {
-    id: "cvc",
-    label: "Short vowel CVC words",
-    description: "Short a, e, i, o, and u in consonant-vowel-consonant words.",
-    passages: [
-      "Ben is the pen pal of Bob. My pal wants a bed.",
-      "Ben got Bob a bag of hats. A hat fell in the hot tub.",
-      "My pet bit my mug. I ate a tin of fish with a pin."
-    ],
-  },
-  {
-    id: "silent-e",
-    label: "Silent e patterns",
-    description: "Words ending with a vowel, consonant, and an e",
-    passages: [
-      "Pete lives in a cave.",
-      "His home is next to mine.",
-      "I live near a lake  and pine tree. I hope you like my tune.",
-      "The mule stole the lion’s mane. Here these things are rude."
-    ],
-  },
-  {
-    id: "vowel-teams",
-    label: "Vowel teams patterns",
-    description: "Sounds of two vowels together",
-    passages: [
-      "We play in the rain.",
-      "The green sheep sleep.",
-    ],
-  }
-];
+import {
+  SOUND_SYSTEM_TARGETS,
+  type GraphemePhonemePair,
+  type GraphemePhonemeScore,
+  type GraphemePhonemeScores,
+  type SoundSystemId,
+} from "./soundSystems.ts"
 
 interface AzurePhoneme {
   Phoneme?: unknown;
@@ -139,9 +56,10 @@ export function isSilentEWord(word: string): boolean {
 
 export function aggregatePhonemeScores(
   json: string,
-  soundSystemId: SoundSystemId
+  soundSystemId: SoundSystemId,
+  targets: readonly GraphemePhonemePair[] = SOUND_SYSTEM_TARGETS[soundSystemId]
 ): GraphemePhonemeScores {
-  const scores = createGraphemePhonemeScores(SOUND_SYSTEM_TARGETS[soundSystemId]);
+  const scores = createGraphemePhonemeScores(targets);
   const payload = JSON.parse(json) as AzureAssessmentPayload;
   const words = payload.NBest?.[0]?.Words;
 
