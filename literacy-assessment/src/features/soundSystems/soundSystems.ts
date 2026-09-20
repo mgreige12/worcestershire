@@ -181,6 +181,8 @@ export const SOUND_SYSTEMS: readonly SoundSystem[] = [
       "The moon has a blue hue.",
       "We threw fruit at the roof.",
       "The dew fell on his suit",
+      "The coach mows down the road.",
+      "The goat rows along."
     ],
     graphemeAssessments: [
       {
@@ -254,6 +256,38 @@ export const SOUND_SYSTEMS: readonly SoundSystem[] = [
           "The rainbow glows in the snow.",
           "The crow sits on the low window.",
         ],
+      },
+      {
+        grapheme: "oo",
+          passages: [ 
+            "Flowers bloom in a hoop by the pool.",
+            "A spoon is a cool tool.",
+            "I see food and drool."
+          ]
+      },
+       {
+        grapheme: "ue",
+          passages: [ 
+            "I missed my true cue.",
+            "Blue glue is sue soon.",
+            "Sue rues the hue."
+          ]
+      },
+      {
+        grapheme: "ui",
+          passages: [ 
+            "Fruit juice is good on a cruise.",
+            "The pursuit cost him a new bruise.",
+            "Recruit them to ruin the suitcase."
+          ]
+      },
+      {
+        grapheme: "ew",
+          passages: [ 
+            "I drew a cat named mew.",
+            "Chew the new beef stew.",
+            "I grew beans for my brew."
+          ]
       },
     ],
   }
