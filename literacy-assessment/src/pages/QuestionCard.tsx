@@ -1,21 +1,31 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAssessment } from "../features/assessment/assessmentProvider";
 import brownGrid from "../../public/brownGrid.png";
 import smiski from "../../public/smiskiTeaching.png";
 import apple from "../../public/appleAsset.png";
 
 function QuestionCard() {
+    const navigate = useNavigate();
     const {
         currentPassage,
         isRecording,
         progressPercent,
         questionNumber,
         totalQuestions,
+        isAssessmentComplete,
         assessmentMode,
         selectedSystemId,
         startGeneralAssessment,
         startRecording,
         stopRecording,
     } = useAssessment();
+
+    useEffect(() => {
+        if (isAssessmentComplete) {
+            navigate("/results", { replace: true });
+        }
+    }, [isAssessmentComplete, navigate]);
 
     return (
         <main

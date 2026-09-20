@@ -28,6 +28,7 @@ interface AssessmentContextValue {
 	questionNumber: number;
 	totalQuestions: number;
 	progressPercent: number;
+	isAssessmentComplete: boolean;
 	scoresBySystem: Record<SoundSystemId, GraphemePhonemeScores>;
 	scoresByGrapheme: Record<string, GraphemePhonemeScores>;
 	spokenBySystem: Record<SoundSystemId, string[]>;
@@ -155,6 +156,8 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
 	const progressPercent = totalQuestions
 		? (completedQuestions / totalQuestions) * 100
 		: 0;
+	const isAssessmentComplete =
+		totalQuestions > 0 && completedQuestions >= totalQuestions;
     
 	const startGeneralAssessment = (systemId: SoundSystemId) => {
 		setQuestions(GENERAL_QUESTIONS);
@@ -303,6 +306,7 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
 				questionNumber,
 				totalQuestions,
 				progressPercent,
+				isAssessmentComplete,
 				scoresBySystem,
 				scoresByGrapheme,
 				spokenBySystem,

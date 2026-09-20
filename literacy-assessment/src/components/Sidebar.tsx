@@ -1,8 +1,13 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
 
     return (
         <aside
